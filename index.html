@@ -182,6 +182,35 @@
   .block-total b{color:var(--demon);font-size:19px;font-family:'Noto Serif SC',"Songti SC",serif;font-variant-numeric:tabular-nums;}
   .edit-hint{font-size:12px;color:var(--faint);margin-top:14px;text-align:right;letter-spacing:.05em;}
 
+  /* ---------- 最终排名 ---------- */
+  .rank-wrap{overflow-x:auto;border:1px solid var(--hair);background:var(--panel);}
+  table.rank{border-collapse:collapse;table-layout:fixed;width:100%;min-width:680px;}
+  table.rank th{font-size:12px;color:var(--faint);font-weight:400;text-align:center;padding:11px 8px;border-bottom:1px solid var(--hair);background:var(--bg2);letter-spacing:.06em;}
+  table.rank td{font-size:13.5px;color:var(--ink);padding:10px 8px;text-align:center;border-bottom:1px solid rgba(43,34,36,.5);font-variant-numeric:tabular-nums;}
+  table.rank tr:last-child td{border-bottom:none;}
+  table.rank td.rank-no{color:var(--faint);font-weight:400;}
+  table.rank td.name{color:var(--ink);font-weight:500;}
+  table.rank td.sc{color:var(--muted);}
+  table.rank td.score{color:var(--demon);font-weight:700;}
+  table.rank td.neg{color:#ff7a6b;}
+  table.rank tr.top1 td{background:rgba(224,49,49,.08);}
+  table.rank tr.top1 td.rank-no,table.rank tr.top1 td.name,table.rank tr.top1 td.score{color:var(--demon);}
+
+  /* ---------- 荣誉称号 ---------- */
+  .honors{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;}
+  .honor-card{border:1px solid var(--hair);background:linear-gradient(165deg,var(--panel2),var(--bg2));padding:26px 26px 20px;position:relative;border-radius:2px;display:flex;flex-direction:column;}
+  .honor-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--demon),transparent);}
+  .honor-card .hc-tag{font-size:11px;letter-spacing:.35em;color:var(--faint);margin-bottom:13px;}
+  .honor-card .hc-team{font-family:'Noto Serif SC',"Songti SC",serif;font-size:19px;color:var(--ink);font-weight:700;letter-spacing:.05em;margin-bottom:12px;}
+  .honor-card .hc-body{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:16px;flex:1;}
+  .honor-card .hc-name{font-family:'Noto Serif SC',"Songti SC",serif;font-size:17px;color:var(--demon);border:1px solid var(--demon2);padding:5px 15px;letter-spacing:.14em;align-self:flex-start;margin-bottom:16px;}
+  .honor-card .hc-foot{font-size:11.5px;color:var(--faint);display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--hair);padding-top:11px;letter-spacing:.04em;}
+
+  /* 未竟之语扩充段落 */
+  .revel .ep{font-size:15px;color:var(--muted);max-width:760px;margin:0 auto 16px;text-align:left;}
+  .revel .ep b{color:var(--ink);font-weight:600;}
+  .revel .ep .hl{color:var(--demon);font-weight:600;}
+
   /* ---------- 背景红镜（低透明度） ---------- */
   .bg-mirror{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center;opacity:.13;}
   .bg-mirror svg{width:min(46vh,330px);height:auto;display:block;filter:drop-shadow(0 0 40px rgba(224,49,49,.30));}
@@ -730,12 +759,64 @@
         <div class="h" style="--c:var(--doc)"><b>医者</b> 讨厌好战者——因为好战者身上，有她不愿承认的<b>冷漠</b>。</div>
         <div class="h" style="--c:var(--adv)"><b>冒险者</b> 讨厌医者——因为医者身上，有他不愿承认的<b>渴望被看见</b>。</div>
       </div>
-      <div class="awards">
-        <div class="award"><b>第一名</b>5 条项链 / 人</div>
-        <div class="award"><b>第二名</b>2 条项链 / 人</div>
-        <div class="award"><b>第三名</b>1 条项链 / 人</div>
-        <div class="award"><b>荣誉</b><span class="honor">“XXXX”</span>——游戏内某方面表现优异者</div>
-      </div>
+
+      <p class="ep">人们常把“面具”当成贬义词，仿佛真实的自我就该是不堪的。可我想，面具未必虚伪。一个教书育人的教师，心底也会藏着不可示人的一面——他也得带着面具生活，才能撑起讲台前那个笃定严格的自己；而等回到家中，他又成了需要照顾妻子的丈夫，换上另一副柔软面具。这不是欺骗，而是爱、责任与角色的担当。我们有多重身份，就有多重面具；这不是人格的分裂，恰恰是人生的完整——扮演角色，不是丢失自己，而是用不同的方式，把自己交给不同的人。</p>
+
+      <p class="ep">游戏中有不同的叙事：独白叙事、扁平叙事、涌现叙事、精简叙事等等；生活中有更多复杂的叙事。某个时刻、某个阶段，代表了无数种人生叙事的手法。你要以积极的（成长、乐观、感恩、接纳、自信、利他）、消极的（固定、悲观、受害、攀比、逃避、嫉妒、讨好），还是中性的（戒备、竞争、佛系、怀疑）心态，去面对呢？</p>
+
+      <p class="ep">不要用人生某个时刻、某个阶段的境地来形容自己的一生。没有任何一个词语可以概括任何一个人的时间长河，也不要以一个词来作为自己的锚点，它是片面的、极端的。正因为这样，用浅薄的生命阅历，去整体地描述一个人的一生，是不恰当的。我们常犯的错，是拿别人（或者自己）某个阶段的一点点情绪，去盖棺定论——他失败过，所以他一事无成；她嫉妒过，所以她卑劣。可人的一生是一条长河，一个浪花遮不住整条河。被定义的人，常常是委屈的；而被定义过的人，也常常忘了自己比那个标签宽广得多。</p>
+
+      <p class="ep">你是什么样的人？由周围的人来定义？还是自己去定义？如何定义？这是伴随人生的课题，这些问题伴随着一生，需要每个人去好好解。</p>
+
+      <p class="ep"><span class="hl">灯灭之后，庄园空了。</span>可那些我们戴过的面具、在彼此眼里照见过的自己、以及那些曾被一个词概括却终究比那个词宽广的人，没有跟着散场。<b>恶魔曾说：你们既是伟大的人，也是可怜虫——二者从来同在。</b>我想把这句话，还给人生的我们。我们不必做一个完美无缺的人，不必把面具全部摘下，也无须因为戴着面具而羞愧。允许自己在某一段日子里，只是一个可怜虫；也相信自己在另一些时刻，可以是伟大的人。带着面具生活，然后记得偶尔照一照镜子——看见自己，接纳自己。我想，这才是对抗内心那只恶魔、也是对抗生活那只恶魔，真正的方式。</p>
+    </div>
+  </section>
+
+  <!-- ===== 最终排名 ===== -->
+  <section class="sec" id="ranking">
+    <div class="sec-head">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21h8M12 17v4M7 4h10v4H7zM7 8h10l2 7H5z"/></svg></span>
+      <span class="kicker">最终排名</span>
+      <span class="rule"></span>
+    </div>
+    <div class="rank-wrap">
+      <table class="rank">
+        <colgroup><col style="width:9%"><col style="width:14%"><col style="width:11%"><col style="width:11%"><col style="width:14%"><col style="width:11%"><col style="width:11%"><col style="width:19%"></colgroup>
+        <thead>
+          <tr><th>排名</th><th>名单一</th><th>第一局</th><th>第二局</th><th>名单二</th><th>第一局</th><th>第二局</th><th>得分</th></tr>
+        </thead>
+        <tbody>
+          <tr class="top1"><td class="rank-no">1</td><td class="name">梧桐</td><td class="sc">38.6</td><td class="sc">58.6</td><td class="name">笙歌</td><td class="sc">53.6</td><td class="sc">65.2</td><td class="score">108</td></tr>
+          <tr><td class="rank-no">2</td><td class="name">海岸线</td><td class="sc">54.8</td><td class="sc">46</td><td class="name">木弦</td><td class="sc">58</td><td class="sc">48.2</td><td class="score">103.5</td></tr>
+          <tr><td class="rank-no">3</td><td class="name">巧克力</td><td class="sc">31.4</td><td class="sc">60</td><td class="name">香蕉</td><td class="sc">50.8</td><td class="sc">62.6</td><td class="score">102.4</td></tr>
+          <tr><td class="rank-no">4</td><td class="name">诉说</td><td class="sc">39.6</td><td class="sc">56</td><td class="name">蛋糕</td><td class="sc">35</td><td class="sc">63.6</td><td class="score">97.1</td></tr>
+          <tr><td class="rank-no">5</td><td class="name">执伞</td><td class="sc">39.2</td><td class="sc">50.6</td><td class="name">乌冬</td><td class="sc">44.2</td><td class="sc">48.8</td><td class="score">91.4</td></tr>
+          <tr><td class="rank-no">6</td><td class="name">飞飞</td><td class="sc">40</td><td class="sc">61</td><td class="name">阿淮</td><td class="sc">24</td><td class="sc">24.4</td><td class="score">74.7</td></tr>
+          <tr><td class="rank-no">7</td><td class="name">柠檬</td><td class="sc">18.6</td><td class="sc">46</td><td class="name">星晚</td><td class="sc">33</td><td class="sc">36.6</td><td class="score">67.1</td></tr>
+          <tr><td class="rank-no">8</td><td class="name">绪枯</td><td class="sc">32.6</td><td class="sc">22.2</td><td class="name">凝芋</td><td class="sc">18.2</td><td class="sc">19</td><td class="score">46</td></tr>
+          <tr><td class="rank-no">9</td><td class="name">凌念思</td><td class="sc">12.2</td><td class="sc">12.6</td><td class="name">朝辞</td><td class="sc">33.4</td><td class="sc neg">-0.2</td><td class="score">29</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== 九组荣誉称号 ===== -->
+  <section class="sec" id="honors">
+    <div class="sec-head">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21l6-5 6 5M12 16v5"/></svg></span>
+      <span class="kicker">九组荣誉称号</span>
+      <span class="rule"></span>
+    </div>
+    <div class="honors">
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第一名</div><div class="hc-team">【梧桐 / 笙歌】</div><div class="hc-body">在《饲》水友娱乐赛中，共击杀 7 只良子，既是天赋异禀的吟游诗人，又是骁勇善战的骑士，特授予</div><div class="hc-name">文物双全</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第二名</div><div class="hc-team">【海岸线 / 木弦】</div><div class="hc-body">在《饲》水友娱乐赛中，兢兢业业备赛，实战中发挥稳定，但性格略显嚣张，共挑衅恶魔 2 次，特授予</div><div class="hc-name">二好学生</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第三名</div><div class="hc-team">【巧克力 / 香蕉】</div><div class="hc-body">在《饲》水友娱乐赛中，给鹿头剃头，给书架修脚，且喜欢放生格挡，特授予</div><div class="hc-name">善良正太</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第四名</div><div class="hc-team">【诉说 / 蛋糕】</div><div class="hc-body">在《饲》水友娱乐赛中，首位次合成金杯，共拿到 3 只金杯，但遭到了锤哥们的悬赏，特授予</div><div class="hc-name">金杯爱好者</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第五名</div><div class="hc-team">【执伞 / 乌冬】</div><div class="hc-body">在《饲》水友娱乐赛中，睡在地上也想着“死了算了”，且互相哄睡队友，特授予</div><div class="hc-name">睡睡睡，哄哄哄</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第六名</div><div class="hc-team">【飞飞 / 阿淮】</div><div class="hc-body">在《饲》水友娱乐赛中，运气超燃，但天性顽劣，共挑衅恶魔 3 次，特授予</div><div class="hc-name">最爱挑衅</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第七名</div><div class="hc-team">【柠檬 / 星晚】</div><div class="hc-body">在《饲》水友娱乐赛中，临时更换了因发烧无法参赛的队友，且在比赛完后也发低烧了，特授予</div><div class="hc-name">红温的神</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第八名</div><div class="hc-team">【绪枯 / 凝芋】</div><div class="hc-body">在《饲》水友娱乐赛中，虽然口号里有带金离场，但两人非常默契，本质上都很爱睡觉，都不想离开庄园，特授予</div><div class="hc-name">最年轻之人</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
+      <div class="honor-card"><div class="hc-tag">荣誉称号 · 第九名</div><div class="hc-team">【凌念思 / 朝辞】</div><div class="hc-body">在《饲》水友娱乐赛中，表现最“优异”的一组，即使红网也走到了最后，也来到了最后，特授予</div><div class="hc-name">“三好学生”</div><div class="hc-foot"><span>特发此证，以资鼓励</span><span>2026年10月6日</span></div></div>
     </div>
   </section>
 
